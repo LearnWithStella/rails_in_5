@@ -12,5 +12,8 @@
   .field
     = f.label :color
     = f.text_field :color, type: 'color'
+  .field
+    = f.label :event
+    = f.select :event_id, Event.all.collect{ |event| [event.name,event.id]}
   .actions
     = f.submit 'Save'

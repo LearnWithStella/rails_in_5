@@ -8,12 +8,15 @@
       %th
       %th
       %th
+      %th
 
   %tbody
     - @tasks.each do |task|
       %tr{ style: "background-color: #{task.color}"}
         %td= task.description
         %td= task.color
+        %td
+          = link_to task.event.name, event_path(task.event) if task.event
         %td= link_to 'Show', task
         %td= link_to 'Edit', edit_task_path(task)
         %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
