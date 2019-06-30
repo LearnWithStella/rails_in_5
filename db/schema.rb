@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20190630084847) do
     t.string   "description"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "milestone_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["milestone_id"], name: "index_goals_on_milestone_id"
   end
 
   create_table "milestones", force: :cascade do |t|
@@ -34,8 +36,10 @@ ActiveRecord::Schema.define(version: 20190630084847) do
     t.string   "description"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.integer  "event_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["event_id"], name: "index_milestones_on_event_id"
   end
 
   create_table "tasks", force: :cascade do |t|

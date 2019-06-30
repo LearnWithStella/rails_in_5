@@ -31,6 +31,7 @@ class GoalsController < ApplicationController
         format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
         format.json { render :show, status: :created, location: @goal }
       else
+        flash[:error] =  "Could not create goal! #{@goal.errors.full_messages.to_sentence}"
         format.html { render :new }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
       end
@@ -69,6 +70,10 @@ class GoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params
-      params.require(:goal).permit(:name, :description, :start_time, :end_time)
+      params.require(:goal).permit(:name,
+                                   :description,
+                                   :start_time,
+                                   :end_time,
+                                   :milestone_id)
     end
 end

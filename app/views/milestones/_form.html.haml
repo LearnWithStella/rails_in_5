@@ -1,10 +1,4 @@
 = form_for @milestone do |f|
-  - if @milestone.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@milestone.errors.count, "error")} prohibited this milestone from being saved:"
-      %ul
-        - @milestone.errors.full_messages.each do |message|
-          %li= message
 
   .field
     = f.label :name
@@ -18,5 +12,8 @@
   .field
     = f.label :end_time
     = f.datetime_select :end_time
+  .field
+    = f.label :event
+    = f.select :event_id, Event.all.collect{ |event| [event.name, event.id]}
   .actions
     = f.submit 'Save'
