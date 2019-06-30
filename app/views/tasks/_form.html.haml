@@ -13,7 +13,7 @@
     = f.label :color
     = f.text_field :color, type: 'color'
   .field
-    = f.label :event
-    = f.select :event_id, Event.all.collect{ |event| [event.name,event.id]}
+    = f.label :goal
+    = f.select :goal_id, Goal.all.collect{ |goal| [goal.name, goal.id]}
   .actions
     = f.submit 'Save'
