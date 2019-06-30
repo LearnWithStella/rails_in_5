@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery3
+//= require jquery-ui
+//= require moment
+//= require calendar
 //= require popper
 //= require bootstrap-sprockets

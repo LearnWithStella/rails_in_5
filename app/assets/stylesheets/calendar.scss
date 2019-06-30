@@ -1,0 +1,34 @@
+@import "fullcalendar.css";
+@import "jquery-ui/draggable";
+//@import "fullcalendar.print";
+//@import "fullcalendar/scheduler";
+
+.schedulable{
+  padding: 7px;
+  border: 2px solid #151515;
+  position:relative;
+  z-index:1;
+  cursor:move;
+}
+
+.schedule-room-slot .schedule-event.compact {
+  margin-top: -23px;
+  margin-left: 20%;
+  width: 80%;
+}
+
+.schedule-event-text{
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  line-height: 23px;
+  overflow: hidden;
+}
+
+.schedule-event-delete-button {
+    font-weight:bold;
+    cursor: pointer;
+    padding: 0px 3px;
+    border: 1px solid grey;
+    margin-right: 5px;
+}
